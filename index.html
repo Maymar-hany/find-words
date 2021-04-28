@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Wordfind game Javascript</title>
+        <link rel="stylesheet" href="styles.css">
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+        <audio id="buzzer" src="mixkit-achievement-bell-600.wav" type="audio/wav"></audio>
+    </head>
+    <body>
+        <!-- Add required markup -->
+        <div id="time">
+            <span >
+                <i class='far fa-clock' style='font-size:36px'></i>
+                <label id="minutes" style='font-size:36px'>00</label>:<label id="seconds" style='font-size:36px'>00</label>
+              </span>
+            
+            </div>
+        <div id="puzzle-container"></div>
+        <div id="puzzle-words"></div>
+        <div id="winner" class="modal">
+            <div class="modal-background">
+              
+            </div>
+        <div id="wins" class="modal-content has-text-centered">
+     
+            
+            <button class="modal-close is-large" aria-label="close" onclick="closescore()"></button>
+             <p id="wintitle" class=" title">   Winner !</p>
+             <p  id="wintxt"> You completed the puzzle in <label id="min"></label>minutes and<label id="sec"></label> seconds</p>
+             <button id="winbtn" class="play-again" onClick="window.location.href=window.location.href">Play Again</button>
+          
+      </div>
+        </div>
+
+        <!-- Add dependencies -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+        <script src="wordfind.js"></script>
+        <script src="wordfindgame.js"></script>
+        <!-- Add our logic -->
+        <script>
+            // An array with the words to show
+            var words = [ 'Bladder','cancer',  'Treatment', 'Precision','Medicine',
+             'Awareness', 'Internal','campaign', 'Personalized', 'Month', 'May', 'Patients'  
+             
+           ];
+
+            // Start a basic word game without customization !
+            var gamePuzzle = wordfindgame.create(words, '#puzzle-container','#puzzle-words');
+            var timer= 0;
+            var sec = 0;
+            var minutes =0;
+            var seconds = 0;
+            $('#puzzle-container button').click(function(){
+               
+                if ($('#puzzle-words li').hasClass("wordFound")){
+                   //console.log('found');
+                   // $('#buzzer').get(0).play();
+                }});
+                $('#puzzle-container button').mouseleave(function(){
+               
+                if ($('#puzzle-container button').hasClass("complete")){
+                    $('#winner').addClass('is-active')
+                    clearInterval(timer)
+                    document.getElementById("min").innerHTML=minutes
+                    document.getElementById("sec").innerHTML=seconds
+                }});
+                function pad ( val ) { return val > 9 ? val : "0" + val; }
+            
+               
+            $("#solveBTN").click(function(){
+                // Solve the puzzle !
+                var result = wordfindgame.solve(gamePuzzle, words);
+                console.log(result);
+            });
+            timer=setInterval( function(){
+                seconds=pad(++sec%60);
+                minutes=pad(parseInt(sec/60,10))
+                document.getElementById("seconds").innerHTML=seconds;
+                document.getElementById("minutes").innerHTML= minutes;
+            }, 1000);
+            function closescore(){
+                $('#winner').removeClass('is-active') 
+                 
+            }
+        </script>
+    </body>
+</html>
