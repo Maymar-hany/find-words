@@ -6,15 +6,19 @@
         <link rel="stylesheet" href="styles.css">
         
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+        
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
         <audio id="buzzer" src="mixkit-achievement-bell-600.wav" type="audio/wav"></audio>
     </head>
     <body>
+        <main>
+            <div class="header-img"></div>
+        </main>
         <!-- Add required markup -->
         <div id="time">
             <span >
-                <i class='far fa-clock' style='font-size:36px'></i>
-                <label id="minutes" style='font-size:36px'>00</label>:<label id="seconds" style='font-size:36px'>00</label>
+                <i class='far fa-clock' style='font-size:26px'></i>
+                <label id="minutes" style='font-size:26px'>00</label>:<label id="seconds" style='font-size:26px'>00</label>
               </span>
             
             </div>
@@ -34,39 +38,43 @@
           
       </div>
         </div>
-
+        <div id="footer">
+        </div>
         <!-- Add dependencies -->
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
         <script src="wordfind.js"></script>
         <script src="wordfindgame.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
+
         <!-- Add our logic -->
         <script>
             // An array with the words to show
-            var words = [ 'Bladder','cancer',  'Treatment', 'Precision','Medicine',
-             'Awareness', 'Internal','campaign', 'Personalized', 'Month', 'May', 'Patients'  
+            var words = [ 'Bladder','Cancer',  'Treatment', 'Precision','Medicine',
+             'Awareness', 'Internal','Campaign', 'Personalized', 'Month', 'May', 'Patients'  
              
            ];
-
+           var colors = [ '#5d0668', '#f3a90b',' #1285ca'];
+           
+           
             // Start a basic word game without customization !
             var gamePuzzle = wordfindgame.create(words, '#puzzle-container','#puzzle-words');
             var timer= 0;
             var sec = 0;
             var minutes =0;
             var seconds = 0;
-            $('#puzzle-container button').click(function(){
-               
-                if ($('#puzzle-words li').hasClass("wordFound")){
-                   //console.log('found');
-                   // $('#buzzer').get(0).play();
-                }});
+            var count =0
+          if ($('#puzzle-container button').hasClass("found")){
+                
+                }
+            
+            
                 $('#puzzle-container button').mouseleave(function(){
                
-                if ($('#puzzle-container button').hasClass("complete")){
-                    $('#winner').addClass('is-active')
-                    clearInterval(timer)
-                    document.getElementById("min").innerHTML=minutes
-                    document.getElementById("sec").innerHTML=seconds
-                }});
+               if ($('#puzzle-container button').hasClass("found")){
+                   $('#puzzle-container button').addClass('blue')
+                   
+               }});
+             
                 function pad ( val ) { return val > 9 ? val : "0" + val; }
             
                
@@ -85,6 +93,23 @@
                 $('#winner').removeClass('is-active') 
                  
             }
+            
+            wordfindgame.onClompleteWord(function(word){
+    console.log(word);
+ count++
+    var random_color = colors[~~(Math.random() * colors.length)];
+    $('#buzzer').get(0).play();
+    $('.found'+count).css('background-color', random_color);
+    $('.found'+count).css('color', '#fff');
+    if(count===12){
+               
+               $('#winner').addClass('is-active')
+               clearInterval(timer)
+               document.getElementById("min").innerHTML=minutes
+               document.getElementById("sec").innerHTML=seconds
+           }
+  });
+      
         </script>
     </body>
 </html>
