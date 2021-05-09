@@ -110,14 +110,14 @@
         background-image:url('frame-mb.png');
     }
     #puzzle-container .puzzleSquare {
-        height: 20px;
-        width: 20px;
+        height: 15px;
+        width: 15px;
         text-transform: uppercase;
         background-color: transparent;
         border: 0;
         color: #fff;
         cursor: pointer;
-        font: 15px sans-serif;
+        font: 13px sans-serif bold;
         touch-action: auto;
         
     }
