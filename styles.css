@@ -120,7 +120,7 @@ html {
     }
     #puzzle-container .puzzleSquare {
         height: 15px;
-        width: 20px;
+        width: 15px;
         text-transform: uppercase;
         background-color: transparent;
         border: 0;
