@@ -50,10 +50,7 @@
 }
 /* indicates when a square has been selected */
 
-#puzzle-container .selected {
-    background-color: rgb(209, 160, 0);
-    color: #fff;
-}
+
 /* indicates that the square is part of a word that has been found */
 
 #puzzle-container .found {
@@ -183,6 +180,7 @@ html {
     -o-background-size: cover;
      min-height: 100%;
      overflow: hidden;
+     
   }
 }
 @media (min-width: 482px){
@@ -202,6 +200,10 @@ html {
         height:446px ;
         background-repeat: no-repeat;
         background-image:url('Game Frame.png');
+    }
+    #puzzle-container .selected {
+        background-color: rgb(209, 160, 0);
+        color: #fff;
     }
     #puzzle-container .puzzleSquare {
         height: 30px;
@@ -275,4 +277,8 @@ html {
     -o-background-size: cover;
      min-height: 100%;
   }
+  #puzzle-container .selected {
+    background-color: rgb(209, 160, 0);
+    color: #fff;
+}
 }
