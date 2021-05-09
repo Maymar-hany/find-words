@@ -119,14 +119,14 @@ html {
         background-image:url('frame-mb.png');
     }
     #puzzle-container .puzzleSquare {
-        height: 10px;
+        height: 15px;
         width: 20px;
         text-transform: uppercase;
         background-color: transparent;
         border: 0;
         color: #fff;
         cursor: pointer;
-        font: 15px sans-serif;
+        font: 13px sans-serif;
     }
     #puzzle-words {
         padding-top: 10px;
