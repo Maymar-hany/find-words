@@ -183,6 +183,7 @@ html {
     -o-background-size: cover;
      min-height: 100%;
      overflow: hidden;
+     position: relative;
      
   }
   body {
@@ -283,6 +284,7 @@ html {
     -o-background-size: cover;
      min-height: 100%;
      position: relative;
+     overflow: hidden;
   }
   #puzzle-container .selected {
     background-color: rgb(209, 160, 0);
