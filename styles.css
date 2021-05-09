@@ -1,6 +1,10 @@
 
-
-
+body {
+    position: relative
+  }
+  html, body {
+    overflow: hidden;
+  }
 
 
 #wins{
