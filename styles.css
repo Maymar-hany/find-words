@@ -110,14 +110,14 @@
         background-image:url('frame-mb.png');
     }
     #puzzle-container .puzzleSquare {
-        height: 15px;
-        width: 13px;
+        height: 20px;
+        width: 20px;
         text-transform: uppercase;
         background-color: transparent;
         border: 0;
         color: #fff;
         cursor: pointer;
-        font: 10px sans-serif;
+        font: 15px sans-serif;
         touch-action: auto;
         
     }
@@ -128,7 +128,7 @@
         -webkit-column-count: 2;
         -webkit-column-gap: 20px;
         column-count: 3;
-        column-gap: 20px;
+        column-gap: 15px;
         
     }
     
@@ -181,7 +181,7 @@ html {
     -webkit-background-size: 100%;
     -moz-background-size: cover;
     -o-background-size: cover;
-    max-height: 100vh;
+    min-height: 100%;
      overflow: hidden;
      position: relative;
      
