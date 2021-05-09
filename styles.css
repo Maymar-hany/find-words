@@ -1,15 +1,6 @@
 
 
-html {
-    background-image: url('Game Background.png');
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    -webkit-background-size: 100%;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-     min-height: 100%;
-  }
+
 
 
 #wins{
@@ -182,6 +173,17 @@ html {
 .clck{
     font-size: 15px;
 }
+html {
+    background-image: url('Game Background.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    -webkit-background-size: 100%;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     min-height: 100%;
+     overflow: hidden;
+  }
 }
 @media (min-width: 482px){
     #gameboard{
@@ -263,4 +265,14 @@ font-size: 26px;
 .clck{
     font-size: 26px;
 }
+html {
+    background-image: url('Game Background.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    -webkit-background-size: 100%;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     min-height: 100%;
+  }
 }
