@@ -181,7 +181,7 @@ html {
     -webkit-background-size: 100%;
     -moz-background-size: cover;
     -o-background-size: cover;
-    min-height: 100%;
+    max-height: 100vh;
      overflow: hidden;
      position: relative;
      
