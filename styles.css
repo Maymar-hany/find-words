@@ -120,13 +120,15 @@ html {
     }
     #puzzle-container .puzzleSquare {
         height: 15px;
-        width: 15px;
+        width: 13px;
         text-transform: uppercase;
         background-color: transparent;
         border: 0;
         color: #fff;
         cursor: pointer;
-        font: 13px sans-serif;
+        font: 10px sans-serif;
+        touch-action: auto;
+        
     }
     #puzzle-words {
         padding-top: 10px;
