@@ -282,6 +282,7 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover;
      min-height: 100%;
+     position: relative;
   }
   #puzzle-container .selected {
     background-color: rgb(209, 160, 0);
