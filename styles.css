@@ -1,20 +1,8 @@
-#puzzle-container {
-    border: 1px transparent;
-    padding: 10px;
-    float: left;
-    margin: 0px 40px;
-    margin-left: 250px;
-    padding-top: 40px;
-    padding-bottom: 20px;
-    border-radius: 10px;
-    width: 750px;
-    height:446px ;
-    background-repeat: no-repeat;
-    background-image:url('Game Frame.png');
-}
+
+
 html {
     background-image: url('Game Background.png');
-    background-position: top;
+    background-position: top center;
     background-repeat: no-repeat;
     background-size: cover; 
     -webkit-background-size: 100%;
@@ -22,30 +10,8 @@ html {
     -o-background-size: cover;
      min-height: 100%;
   }
-  .header-img {
-    width: 200px;
-    height: 107px;
-    margin: 0px auto;
-    background: url('Bladders-01.png');
-    background-size: cover;
-  }
-  #footer {
-    position: fixed;
-    padding: 10px 10px 0px 10px;
-    margin-left: 10px;
-    bottom: 0;
-    width: 100%; 
-    height: 65px;
-    background: url('Janssen Logo-01.png');
-    background-repeat: no-repeat;
-}
-#time{
-    justify-content: center;
-    align-items: center; 
-    margin: 0 auto;
-    margin-right: 685px;
-    width: fit-content;
-}
+
+
 #wins{
     padding: 30px;
     background-color: #5d0668;
@@ -81,16 +47,7 @@ html {
 }
 /* style for each square in the puzzle */
 
-#puzzle-container .puzzleSquare {
-    height: 30px;
-    width: 50px;
-    text-transform: uppercase;
-    background-color: transparent;
-    border: 0;
-    color: #fff;
-    cursor: pointer;
-    font: 1.5em sans-serif;
-}
+
 #puzzle-container .puzzleSquare:hover{
  background-color: rgb(58, 138, 184);
  
@@ -128,26 +85,7 @@ html {
 /**
 * Styles for the word list
 */
-#puzzle-words {
-    padding-top: 40px;
-    -moz-column-count: 2;
-    -moz-column-gap: 20px;
-    -webkit-column-count: 2;
-    -webkit-column-gap: 20px;
-    column-count: 1;
-    column-gap: 20px;
-    width: 300px;
-}
 
-#puzzle-words ul {
-    list-style-type: none;
-}
-
-#puzzle-words li {
-    padding: 4px 0;
-    font: 1.3em sans-serif;
-    font-weight: bold;
-}
 /* indicates that the word has been found */
 
 #puzzle-words .wordFound {
@@ -160,4 +98,167 @@ html {
 
 #solve {
     margin: 0 30px;
+}
+@media (max-width: 480px){
+    #gameboard{
+        margin-top: 0px;
+        margin-right: 20px;
+        margin-left: 10px;
+    }
+    #puzzle-container {
+        border: 1px transparent;
+        padding: 10px;
+       margin-left: 15px;
+        width: 300px;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+        align-items: center;
+        height:340px ;
+        background-repeat: no-repeat;
+        background-image:url('frame-mb.png');
+    }
+    #puzzle-container .puzzleSquare {
+        height: 10px;
+        width: 20px;
+        text-transform: uppercase;
+        background-color: transparent;
+        border: 0;
+        color: #fff;
+        cursor: pointer;
+        font: 1em sans-serif;
+    }
+    #puzzle-words {
+        padding-top: 10px;
+        -moz-column-count: 2;
+        -moz-column-gap: 20px;
+        -webkit-column-count: 2;
+        -webkit-column-gap: 20px;
+        column-count: 3;
+        column-gap: 20px;
+        
+    }
+    
+    #puzzle-words ul {
+        list-style-type: none;
+    }
+    
+    #puzzle-words li {
+        padding: 4px 0;
+        font: 1em sans-serif;
+        font-weight: bold;
+    }
+    .header-img {
+        width: 200px;
+        height: 107px;
+        margin: 0px auto;
+        background: url('Bladders-01.png');
+        background-size: cover;
+      }
+      #footer {
+        position: fixed;
+        padding: 10px 10px 0px 10px;
+        margin-left: 10px;
+        bottom: 0;
+        width: 100%; 
+        height: 45px;
+        background: url('logo-mb.png');
+        background-repeat: no-repeat;
+    }
+     
+#time{
+    justify-content: center;
+    align-items: center; 
+    margin: 0 auto;
+    
+    width: fit-content;
+    
+}
+#clock{
+    font-size: 15px;
+}
+.clck{
+    font-size: 15px;
+}
+}
+@media (min-width: 482px){
+    #gameboard{
+        margin-top: 1px;
+    }
+    #puzzle-container {
+        border: 1px transparent;
+        
+        
+        padding-right: 50px;
+        margin-left: 200px;
+        padding-top: 50px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+        align-items: center;
+        height:446px ;
+        background-repeat: no-repeat;
+        background-image:url('Game Frame.png');
+    }
+    #puzzle-container .puzzleSquare {
+        height: 30px;
+        width: 50px;
+        text-transform: uppercase;
+        background-color: transparent;
+        border: 0;
+        color: #fff;
+        cursor: pointer;
+        font: 1.5em sans-serif;
+    }
+    #puzzle-words {
+        padding-top: 40px;
+        -moz-column-count: 2;
+        -moz-column-gap: 20px;
+        -webkit-column-count: 2;
+        -webkit-column-gap: 20px;
+        column-count: 1;
+        column-gap: 20px;
+        
+    }
+    
+    #puzzle-words ul {
+        list-style-type: none;
+    }
+    
+    #puzzle-words li {
+        padding: 4px 0;
+        font: 1.3em sans-serif;
+        font-weight: bold;
+    }
+    .header-img {
+        width: 200px;
+        height: 107px;
+        margin: 0px auto;
+        background: url('Bladders-01.png');
+        background-size: cover;
+      }
+      #footer {
+        position: fixed;
+        padding: 10px 10px 0px 10px;
+        margin-left: 10px;
+        bottom: 0;
+        width: 100%; 
+        height: 65px;
+        background: url('Janssen Logo-01.png');
+        background-repeat: no-repeat;
+    }
+     
+#time{
+    justify-content: center;
+    align-items: center; 
+    margin: 0 auto;
+    margin-right: 720px;
+    width: fit-content;
+    
+}
+#clock{
+font-size: 26px;
+}
+.clck{
+    font-size: 26px;
+}
 }
